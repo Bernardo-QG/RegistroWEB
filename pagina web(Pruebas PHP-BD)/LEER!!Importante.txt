@@ -1,0 +1,1 @@
+Recuerden que para que el PHP funcione debe encontrarse en la carpeta www en caso de usar WAMP o en su carpeta correspondiente en caso de ser otro servidor.
