@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS ProyectoCN;
+﻿DROP DATABASE IF EXISTS ProyectoCN;
 CREATE DATABASE ProyectoCN;
 USE ProyectoCN;
 
@@ -28,18 +28,19 @@ Id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 Id_empleado INT NOT NULL,
 User_name VARCHAR (50) NOT NULL,
 pass VARCHAR (50) NOT NULL,
-Estatus ENUM ('Dios','Semidios', 'Mortal'),
+Permiso ENUM ('Dios','Semidios', 'Mortal'),
+Estatus BIT,
 INDEX (Id_empleado),
 FOREIGN KEY (Id_empleado) REFERENCES Empleado(Id)
 )AUTO_INCREMENT=300000;
 
-INSERT INTO Usuario VALUES (DEFAULT, 100000,'Maria_3', 'daddsade','Semidios');
-INSERT INTO Usuario VALUES (DEFAULT, 100001,'Juan_H', 'reterf','Dios');
-INSERT INTO Usuario VALUES (DEFAULT, 100002,'Jose1', 'dfsdkl','Mortal');
-INSERT INTO Usuario VALUES (DEFAULT, 100003,'Lupita_E', 'rwerwe','Semidios');
-INSERT INTO Usuario VALUES (DEFAULT, 100004,'Jenny_4', 'w3423lk','Semidios');
-INSERT INTO Usuario VALUES (DEFAULT, 100005,'Ross_G', '34klkjkl','Dios');
-INSERT INTO Usuario VALUES (DEFAULT, 100006,'Jesus_C', 'kjk323','Semidios');
+INSERT INTO Usuario VALUES (DEFAULT, 100000,'Maria_3', 'daddsade','Semidios',1);
+INSERT INTO Usuario VALUES (DEFAULT, 100001,'Juan_H', 'reterf','Dios',1);
+INSERT INTO Usuario VALUES (DEFAULT, 100002,'Jose1', 'dfsdkl','Mortal',1);
+INSERT INTO Usuario VALUES (DEFAULT, 100003,'Lupita_E', 'rwerwe','Semidios',1);
+INSERT INTO Usuario VALUES (DEFAULT, 100004,'Jenny_4', 'w3423lk','Semidios',1);
+INSERT INTO Usuario VALUES (DEFAULT, 100005,'Ross_G', '34klkjkl','Dios',1);
+INSERT INTO Usuario VALUES (DEFAULT, 100006,'Jesus_C', 'kjk323','Semidios',1);
 
 SELECT * FROM Usuario;
 
