@@ -85,7 +85,8 @@ CREATE TABLE `usuario` (
   `Id_empleado` int(11) NOT NULL,
   `User_name` varchar(50) NOT NULL,
   `pass` varchar(50) NOT NULL,
-  `Estatus` enum('Dios','Semidios','Mortal') DEFAULT NULL,
+  `Permiso` enum('Dios','Semidios','Mortal') DEFAULT NULL,
+  `Estatus` bit(1) DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `Id_empleado` (`Id_empleado`),
   CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`Id_empleado`) REFERENCES `empleado` (`Id`)
@@ -98,7 +99,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (300000,100000,'Maria_3','daddsade','Semidios'),(300001,100001,'Juan_H','reterf','Dios'),(300002,100002,'Jose1','dfsdkl','Mortal'),(300003,100003,'Lupita_E','rwerwe','Semidios'),(300004,100004,'Jenny_4','w3423lk','Semidios'),(300005,100005,'Ross_G','34klkjkl','Dios'),(300006,100006,'Jesus_C','kjk323','Semidios');
+INSERT INTO `usuario` VALUES (300000,100000,'Maria_3','daddsade','Semidios',_binary ''),(300001,100001,'Juan_H','reterf','Dios',_binary ''),(300002,100002,'Jose1','dfsdkl','Mortal',_binary ''),(300003,100003,'Lupita_E','rwerwe','Semidios',_binary ''),(300004,100004,'Jenny_4','w3423lk','Semidios',_binary ''),(300005,100005,'Ross_G','34klkjkl','Dios',_binary ''),(300006,100006,'Jesus_C','kjk323','Semidios',_binary '');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -111,4 +112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-12 10:31:49
+-- Dump completed on 2019-09-12 10:39:14
