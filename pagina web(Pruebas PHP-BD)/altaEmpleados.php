@@ -20,7 +20,7 @@
 	$correo=$_POST['Correo'];
 	$puesto=$_POST['Puesto'];
 	//Insertar en base de datos
-	$consulta="insert into empleado (Nombre, Apellido_paterno, Apellido_materno, Curp, Correo, Puesto) values('".$nombre."','".$apellidoPaterno."','".$apellidoMaterno."','".$curp."','".$correo."','".$puesto."');";
+	$consulta="insert into empleado (Nombre, Apellido_paterno, Apellido_materno, Curp, Correo, Puesto, Estatus) values('".$nombre."','".$apellidoPaterno."','".$apellidoMaterno."','".$curp."','".$correo."','".$puesto."',1);";
 	//Ejecutar consulta
 	if ($conexion->query($consulta) === TRUE) 
 	{

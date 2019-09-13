@@ -17,7 +17,7 @@
 	$contrasena=$_POST['Contrasena'];
 	$privilegios=$_POST['Privilegios'];
 	//Insertar en base de datos
-	$consulta="insert into usuario (Id_empleado, User_name, pass, Estatus) values(".$id.",'".$usuario."','".$contrasena."','".$privilegios."');";
+	$consulta="insert into usuario (Id_empleado, User_name, pass, Permiso, Estatus) values(".$id.",'".$usuario."','".$contrasena."','".$privilegios."',1);";
 	//Ejecutar consulta
 	if ($conexion->query($consulta) === TRUE) 
 	{
