@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Punch System</title>
+
+	<title>Alta de empleados</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="script.js"></script>
+  	
 </head>
+
 <body>
-		<form action="altaEmpleados.php" method="POST">
-			<label>Nombre empleado:</label>
-			<input type="text" name="nombreEmpleado">
+		<form method="POST" action="altaEmpleados.php">
+			<h2>Alta de empleados</h2>
+			<input type="text" name="nombreEmpleado" id="nombre" placeholder="Nombre" required>
 			<br>
-			<label>Apellido paterno:</label>
-			<input type="text" name="ApellidoPaternoEmpleado">
+			<input type="text" name="ApellidoPaternoEmpleado" id ="apellidoPaterno" placeholder="Apellido Paterno" required>
 			<br>
-			<label>Apellido materno:</label>
-			<input type="text" name="ApellidoMaternoEmpleado">
+			<input type="text" name="ApellidoMaternoEmpleado" id="apellidoMaterno" placeholder="Apellido Materno" required>
 			<br>
-			<label>CURP:</label>
-			<input type="text" name="CURP">
+			<input type="text" name="CURP" placeholder="CURP" id="curp" required>
 			<br>
-			<label>Correo electronico:</label>
-			<input type="text" name="Correo">
+			<input type="text" name="Correo" placeholder="Correo" id="correo" required>
 			<br>
-			<label>Puesto:</label>
-			<input type="text" name="Puesto">
+			<input type="text" name="Puesto" placeholder="Puesto" id="puesto" required>
 			<br>
-			<input type="submit" name="">
-		</form>
+			<input type="submit" value="Enviar" id="boton" onclick="enviarDatosEmpleado();">
+	</form>			
 </body>
+
 </html>

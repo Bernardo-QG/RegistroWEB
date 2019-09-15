@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Punch System</title>
+
+	<title>Alta Usuarios</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="script.js"></script>
+
 </head>
 <body>
 		<form action="altaUsuarios.php" method="POST">
-			<label>ID empleado:</label>
-			<input type="text" name="idEmpleado">
+			<h2>Alta de Usuarios</h2>
+			<input type="text" name="idEmpleado" id="id_empleado" placeholder="Id Empleado" required>
 			<br>
-			<label>Nombre de usuario:</label>
-			<input type="text" name="Username">
+			<input type="text" name="Username" id="nombreUsuario" placeholder="Nombre de Usuario" required>
 			<br>
-			<label>Contrasena:</label>
-			<input type="text" name="Contrasena">
+			<input type="text" name="Contrasena" id="contrasena" placeholder="Contraseña" required>
 			<br>
-			<label>Privilegios:</label>
-			<input type="text" name="Privilegios">
+			<input type="text" name="Privilegios" id="privilegios" placeholder="Privilegios" required>
 			<br>
-			<input type="submit" name="">
+			<input type="submit" value="Enviar" id="boton" onclick="enviarDatosUsuario();">
 		</form>
 </body>
 </html>

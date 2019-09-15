@@ -1,5 +1,6 @@
 <?php 
 	//Variables de conexion
+
 	$hostname="localhost";
 	$username="root";
 	$password="";
@@ -19,12 +20,18 @@
 	$curp=$_POST['CURP'];
 	$correo=$_POST['Correo'];
 	$puesto=$_POST['Puesto'];
+
 	//Insertar en base de datos
 	$consulta="insert into empleado (Nombre, Apellido_paterno, Apellido_materno, Curp, Correo, Puesto, Estatus) values('".$nombre."','".$apellidoPaterno."','".$apellidoMaterno."','".$curp."','".$correo."','".$puesto."',1);";
+
 	//Ejecutar consulta
 	if ($conexion->query($consulta) === TRUE) 
 	{
-    	echo "New record created successfully";
+    	//echo "New record created successfully";
+    	//echo $_POST["nombreEmpleado"];
+    	header("Location:" . $_SERVER['HTTP_REFERER']); //la pagina anterior o poner la pagina que tu quieras
+		die();
+
 	}
 	else 
 	{

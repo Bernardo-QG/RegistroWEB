@@ -21,7 +21,9 @@
 	//Ejecutar consulta
 	if ($conexion->query($consulta) === TRUE) 
 	{
-    	echo "New record created successfully";
+    	//echo "New record created successfully";
+    	header("Location:" . $_SERVER['HTTP_REFERER']);
+		die();
 	}
 	else 
 	{
