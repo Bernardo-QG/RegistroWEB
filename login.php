@@ -2,23 +2,23 @@
 	//Variables de conexion
     include 'conexionBD.php';
 	//Cadena de conexion
-	$con = mysqli_connect($hostname, $username, $password, $dbname,$port);
- 
-    if(mysqli_connect_errno()){
-        echo 'No se pudo conectar a la base de datos : '.mysqli_connect_error();
+    $conexion=new mysqli($hostname, $username, $password, $dbname,$port);
+    //Probar conexion
+    if ($conexion->connect_error) 
+    {
+        die("Error: " . $conexion->connect_error);
     }
-    else{
-       
-        $username=$_GET['user'];
-        $password=$_GET['password'];
-        
-        $sql = "SELECT * FROM Usuario WHERE User_name='$username' AND pass='$password'";
-        $result = mysqli_query($con, $sql);
-        if (mysqli_num_rows($result)>0) {
+    //Obtener datos de Form HTML
+    $username=$_GET['user'];
+    $password=$_GET['password'];
+    //Insertar en base de datos
+    $consulta="SELECT * FROM Usuario WHERE User_name='$username' AND pass='$password';";
+    $resultado = $conexion->query($consulta);
+
+    //Ejecutar consulta
+        if($resultado->num_rows>0)
             echo "Si";            
-        }       
         else
             echo "No";
-        mysqli_close($con);
-    }
+    $conexion->close();
 ?>
