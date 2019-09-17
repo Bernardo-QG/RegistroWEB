@@ -15,8 +15,7 @@
         $sql = "SELECT * FROM Usuario WHERE User_name='$username' AND pass='$password'";
         $result = mysqli_query($con, $sql);
         if (mysqli_num_rows($result)>0) {
-            echo "Si";
-            
+            echo "Si";            
         }       
         else
             echo "No";

@@ -17,14 +17,16 @@
       if($("#uname").val()!="" && $("#upassword").val()!=""){     
         
          $.get("login.php?user="+$("#uname").val()+"&password="+$("#upassword").val(),function(dato){
-            if(dato=="No"){
-              $('#divName').show();
-               alert("No eres Bienvenido");
-               
-            }
+            
             if(dato=="Si"){
               dnone();
               alert("Bienvenido");              
+            }
+            else
+            {
+              $('#divName').show();
+               alert("No eres Bienvenido por que "+dato);
+               
             }
 
         
