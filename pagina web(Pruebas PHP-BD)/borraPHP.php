@@ -18,13 +18,15 @@
 	//Ejecutar consulta
 	if ($conexion->query($consulta) === TRUE) 
 	{
-    	echo "Deleted successfully";
+    	//echo "Deleted successfully";
+    	header("Location:" . $_SERVER['HTTP_REFERER']); //la pagina anterior o poner la pagina que tu quieras
+		die();
 	}
 	else 
 	{
     	echo "Error: " . $consulta . "<br>" . $conexion->error;
 	}
-	$consulta="update empleado set Estatus=0 where Id=".$idEmpleado.";";
+/*	$consulta="update empleado set Estatus=0 where Id=".$idEmpleado.";";
 	if ($conexion->query($consulta) === TRUE) 
 	{
     	echo "Deleted successfully";
@@ -33,5 +35,7 @@
 	{
     	echo "Error: " . $consulta . "<br>" . $conexion->error;
 	}
+*/
 	$conexion->close();
+
  ?>
