@@ -17,14 +17,9 @@
 	<section>
 		<form action=Tabla_Registro.php method="POST">
 
-			<div class="button" id="btn_consulta">
-				<button type="submit"> Ver todos los registros</button>
-			</div>
-
-
 			<div id="inp_fecha1">
 				<label > Ingrese la fecha de incio:</label>
-				<input type="text" name="fecha1" >
+				<input type="text" name="fecha1">
 			</div>
 
 			<div id="inp_fecha2">
@@ -34,7 +29,7 @@
 
 
 			<div class="button" id="btn_buscar">
-				<button type="submit" > BUSCAR </button>
+				<button type="submit" > BUSCAR / VER TODOS LOS REGISTROS </button>
 			</div>
 		</form>
 	</section>
@@ -48,8 +43,7 @@
 							<th>Id Empleado</th>
 							<th>Hora de Entrada</th>
 							<th>Hora de Salida</th>
-							<th>Activo</th>
-							<th>Estatus</th>
+							<th>Activo</th>	
 						</tr>
 					</thead>
 					<tbody>
@@ -65,7 +59,7 @@
 
 						$link=new mysqli($host,$usuario,$contra,$bdname);
 						
-							$select=mysqli_query($link, "select *from registro");
+							$select=mysqli_query($link,"select *from registro");
 							while ($row=$select->fetch_assoc()) {
 							?>
 							<tr>
@@ -73,7 +67,7 @@
 								<th><?php echo $row['Hora_entrada'];?></th>
 								<th><?php echo $row['Hora_salida'];?></th>
 								<th><?php echo $row['Activo'];?></th>
-								<th><?php echo $row['Estatus'];?></th>			
+											
 							</tr>
 					 	<?php 
 							
@@ -81,6 +75,33 @@
 							mysqli_close($link);
 						}//fin del if
 
+					else{
+
+					 	$host="localhost";
+						$usuario="root";
+						$contra="";
+						$bdname="proyectocn";
+
+
+						$link=new mysqli($host,$usuario,$contra,$bdname);
+						
+$select=mysqli_query($link, "select * from registro where Hora_entrada BETWEEN '".$_POST["fecha1"]."' AND '".$_POST["fecha2"]."'");
+						while ($row=$select->fetch_assoc()) {
+							?>
+							<tr>
+								<th><?php echo $row['Id_empleado'];?></th>
+								<th><?php echo $row['Hora_entrada'];?></th>
+								<th><?php echo $row['Hora_salida'];?></th>
+								<th><?php echo $row['Activo'];?></th>
+									
+							</tr>
+					 	<?php 
+							
+						}//fin while
+							mysqli_close($link);
+						}//fin del else
+					 	echo $_POST["fecha1"];
+					 	echo $_POST["fecha2"];
 					 	?>
 					</tbody>
 				</table>
