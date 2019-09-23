@@ -1,0 +1,57 @@
+body {
+  background-image: url(fondo.jpg);
+  background-size: 100vw 100vh !important;
+  background-attachment: fixed !important;
+  margin: 0 !important;
+  font-family: monospace !important;
+
+}
+
+form {
+
+	width: 450px !important;
+	margin: auto !important;
+	background: rgba(0,0,0,0.4) !important;
+	padding: 10px 20px !important;
+	box-sizing: border-box !important;
+	border-radius: 7px !important;
+	margin-top: 70px !important;
+
+}
+
+h2{
+	color: #fff !important;
+	text-align: center !important;
+	margin: 0 !important;
+	font-size: 30px !important;
+	margin-bottom: 20px !important;
+}
+
+input {
+	width: 100% !important;
+	margin-bottom: 20px !important;
+	padding: 7px !important;
+	box-sizing: border-box !important;
+	font-size: 17px !important;
+	border: none !important;
+}
+
+#boton{
+	background: #31384A !important;
+	color: #fff !important;
+	padding: 15px !important;
+
+
+
+}
+
+#boton:hover {
+	cursor: pointer !important;
+}
+
+@media(max-width: 480px){
+	form{
+		width: 100% !important;
+	}
+}
+

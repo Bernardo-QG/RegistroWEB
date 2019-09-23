@@ -2,13 +2,16 @@
 <html>
 <head>
 	<title>Borrar empleado</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="js/script.js"></script>
+
 </head>
 <body>
 		<form action="borraPHP.php" method="POST">
-			<label>ID empleado:</label>
-			<input type="text" name="idEmpleado">
+			<h2>Borrar Empleado</h2>
+			<input type="text" name="idEmpleado" id="idEmpleado" placeholder="Id Empleado" required>
 			<br>
-			<input type="submit" name="">
+			<input type="submit" value="Enviar" id="boton" onclick="borrarEmpleado();">
 		</form>
 </body>
 </html>
