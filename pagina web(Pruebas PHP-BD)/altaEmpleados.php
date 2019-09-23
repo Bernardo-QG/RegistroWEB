@@ -1,11 +1,8 @@
 <?php 
 	//Variables de conexion
-	$hostname="localhost";
-	$username="root";
-	$password="";
-	$dbname="proyectocn";
+	include 'conexionBD.php';
 	//Cadena de conexion
-	$conexion=new mysqli($hostname, $username, $password, $dbname);
+	$conexion=new mysqli($hostname, $username, $password, $dbname, $port);
 	//Probar conexion
 	if ($conexion->connect_error) 
 	{

@@ -51,13 +51,10 @@
 
 					if(empty($_POST["fecha1"]) && empty($_POST["fecha2"] )){
 
-						$host="localhost";
-						$usuario="root";
-						$contra="";
-						$bdname="proyectocn";
+						include 'conexionBD.php';
 
 
-						$link=new mysqli($host,$usuario,$contra,$bdname);
+						$link=new mysqli($host,$usuario,$contra,$bdname, $port);
 						
 							$select=mysqli_query($link,"select *from registro");
 							while ($row=$select->fetch_assoc()) {

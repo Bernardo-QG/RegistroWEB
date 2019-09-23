@@ -53,13 +53,10 @@
 
 					if((empty($_POST["opcion"])) && $_POST["select"]=="Todos los empleados" ){
 
-						$host="localhost";
-						$usuario="root";
-						$contra="";
-						$bdname="proyectocn";
+						include 'conexionBD.php';
 
 
-						$link=new mysqli($host,$usuario,$contra,$bdname);
+						$link=new mysqli($host,$usuario,$contra,$bdname, $port);
 						
 							$select=mysqli_query($link, "select *from empleado where Estatus=1");
 							while ($row=$select->fetch_assoc()) {
