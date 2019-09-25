@@ -11,89 +11,27 @@
   
     <script>
  
-    var gct;
-    function show_Menu(){   
-      
-     
-      $('#divMenu').empty();                                                   
-      $.get("Servidor.php?buscar=", function(datos){                                                                                                                                      
-                    
-       
-               gct = JSON.parse(datos);  
-               for(var i=0;i<gct["AllMenu"].length;i++){
-                                   
-                  $('#divMenu').append(' '
-                  +'<div class=" card p-2 border" style="width:265px">'
-                  +'<img class="card-img-top rounded" src="'+gct["AllMenu"][i].imagen+'" alt="Card image" style="width:100%">'
-                  +'<div class="card-body">'
-                  +'<h5>'+gct["AllMenu"][i].nombre_platillo+' a <b style="font-size: 25px">$'+gct["AllMenu"][i].precio+'</b></h5>'
-                  +'<select id="s'+gct["AllMenu"][i].id_platillo+'">'+opcion(gct)+'</select>'
-                  +'&nbsp;'
-                  +'<button type="button" style="background-color:#A569BD;" class="btn"  data-toggle="popover" data-trigger="hover"'
-                  +' title="Elaboración" data-content="'+gct["AllMenu"][i].elaboracion+'"><i class="fas fa-info" style="color:white;"></i></button>'
-                  +'&nbsp;'
-                  +'<button onclick="comprar('+gct["AllMenu"][i].id_platillo+')" id="p'+gct["AllMenu"][i].id_platillo+'" value="'+gct["AllMenu"][i].nombre_platillo+'" type="button"  class="btn btn-info"><i class="fas fa-heart" style="color:white;"></i></button>'
-                  +'</div></div>&nbsp;&nbsp;');
-                   
-               }
-           });
-         
-                    
-    }
 
-    show_Menu();
- 
-    function opcion(g){
-      var op='';
-      for(var m=0;m<g["AllGuisados"].length;m++){
-       op+= '<option id="'+g["AllGuisados"][m].id_guisado+'">'+g["AllGuisados"][m].nombre_guisado+'</option>'
-      }
-      return op;
-    };
-    var pedido =[];
-
-    function comprar(id){
-
-      var orden = new Array(id,$("#p"+id).attr("value"),$("#s"+id).find('option:selected').val(),$("#s"+id).find('option:selected').attr("id"));
-      pedido.push(orden);
-      //alert("Patillo añadido a pedido");
-      $("#divPedidos").empty();
-      for(var i=0;i<pedido.length;i++){
-       
-      $('<div class="p-2 border">'
-        +'<button onclick="eliminarOrden('+i+')" type="button" class="btn btn-danger" >X</button>'
-        +'&nbsp;&nbsp;'+pedido[i][1]+" de "+pedido[i][2]+' </div>').appendTo(("#divPedidos"));
-
-      }      
-    }
-    function eliminarOrden(id){
-      pedido.splice(id,1);
-      $("#divPedidos").empty();
-      for(var i=0;i<pedido.length;i++){
-       
-      $('<div class="p-2 border">'
-        +'<button onclick="eliminarOrden('+i+')" type="button" class="btn btn-danger" >X</button>'
-        +'&nbsp;&nbsp;'+pedido[i][1]+" de "+pedido[i][2]+' </div>').appendTo(("#divPedidos"));
-
-      }      
-    }
-    function enviarPedido(){
+    function login(){
      var contador=0;
-      if($("#uname").val()!=""){
-              
-        if(pedido.length>0){
-       
-          for (let i = 0; i < pedido.length; i++) {
-            $.get("Servidor_insertPedido.php?nombre="+$("#uname").val()+"&platillo="+pedido[i][0]+"&guisado="+pedido[i][3]);
-          }
-         
-         alert("Pedido enviado");
-         location.reload();
-         
-        }
-        else{
-          alert("No ha ordenado ningun platillo");
-        }
+      if($("#uname").val()!="" && $("#upassword").val()!=""){     
+        
+         $.get("login.php?user="+$("#uname").val()+"&password="+$("#upassword").val(),function(dato){
+            
+            if(dato=="Si"){
+              dnone();
+              alert("Bienvenido");              
+            }
+            else
+            {
+              $('#divName').show();
+               alert("No eres Bienvenido por que "+dato);
+               
+            }
+
+        
+          });
+                
       }
       else {
         $('#divName').show();
@@ -190,12 +128,12 @@
               <input
                 type="password"
                 class="form-control"
-                id="uname"
+                id="upassword"
                 placeholder=""
-                name="uname"
+                name="password"
                 required
               />
-              <div class="valid-feedback">Hola : )</div>
+              <div class="valid-feedback">:o</div>
               <div class="invalid-feedback">
                 Introduzca un password valido! :P            </div>
             </div>
@@ -206,7 +144,7 @@
               <strong>No!</strong> Debes introducir datos correctos.
             </div>
            
-              <button type="button" class="btn btn-success">Sing In </button>
+              <button type="button" class="btn btn-success" onclick="login()">Sing In </button>
            
             
         </div>
