@@ -65,3 +65,15 @@ function enviarDatosUsuario(){
 	}
 
 }
+function borrarEmpleado(){
+			
+	var algo = $('#idEmpleado').val();
+	if(algo1 === ''){
+		alert("El campo Id Empleado está vacío!");
+		return false;
+	}
+	else{
+		alert("El empleado se eliminó exitosamente!");
+	}
+
+}
