@@ -8,42 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  
-    <script>
- 
-
-    function login(){
-     var contador=0;
-      if($("#uname").val()!="" && $("#upassword").val()!=""){     
-        
-         $.get("login.php?user="+$("#uname").val()+"&password="+$("#upassword").val(),function(dato){
-            
-            if(dato=="Si"){
-              dnone();
-              alert("Bienvenido");              
-            }
-            else
-            {
-              $('#divName').show();
-               alert("No eres Bienvenido por que "+dato);
-               
-            }
-
-        
-          });
-                
-      }
-      else {
-        $('#divName').show();
-      }
-    }
-    function dnone(){
-           document.getElementById("divName").style.display="none";
-
-    }
-   
-    </script>
-
+    <script src="JavaScript/script.js"></script>
 
   </head>
 
@@ -56,11 +21,7 @@
         padding: 15px;
         border: 1px solid rgb(160, 160, 160);
         border-radius: 5px 5px 5px 5px;
-      
-      
-    }
-   
-        
+     }      
     
 
 </style>

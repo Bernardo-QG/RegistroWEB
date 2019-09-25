@@ -1,11 +1,8 @@
 <?php 
 	//Variables de conexion
-	$hostname="localhost";
-	$username="root";
-	$password="";
-	$dbname="proyectocn";
+	include 'conexionBD.php';
 	//Cadena de conexion
-	$conexion=new mysqli($hostname, $username, $password, $dbname);
+	$conexion=new mysqli($hostname, $username, $password, $port);
 	//Probar conexion
 	if ($conexion->connect_error) 
 	{
@@ -21,9 +18,7 @@
 	//Ejecutar consulta
 	if ($conexion->query($consulta) === TRUE) 
 	{
-    	//echo "New record created successfully";
-    	header("Location:" . $_SERVER['HTTP_REFERER']);
-		die();
+    	echo "New record created successfully";
 	}
 	else 
 	{

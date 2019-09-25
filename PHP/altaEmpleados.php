@@ -1,22 +1,17 @@
 <?php 
 	//Variables de conexion
-
-	$hostname="localhost";
-	$username="root";
-	$password="";
-	$dbname="proyectocn";
+	include 'conexionBD.php';
 	//Cadena de conexion
-	$conexion=new mysqli($hostname, $username, $password, $dbname);
+	$conexion=new mysqli($hostname, $username, $password, $dbname, $port);
 	//Probar conexion
 	if ($conexion->connect_error) 
 	{
     	die("Error: " . $conexion->connect_error);
 	}
 	//Obtener datos de Form HTML
-	$nombre=$_POST['nombreEmpleado'];
+	$nombre=$_POST['NombreEmpleado'];
 	$apellidoPaterno=$_POST['ApellidoPaternoEmpleado'];
 	$apellidoMaterno=$_POST['ApellidoMaternoEmpleado'];
-	$apellidoPaterno=$_POST['ApellidoPaternoEmpleado'];
 	$curp=$_POST['CURP'];
 	$correo=$_POST['Correo'];
 	$puesto=$_POST['Puesto'];
