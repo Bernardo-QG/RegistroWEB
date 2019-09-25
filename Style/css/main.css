@@ -35,8 +35,13 @@
 }
 
 body, html {
+  background-image: url(../Style/images/icons/fondo.jpg) !important;
+  background-size: 100vw 100vh !important;
+  background-attachment: fixed !important;
+  margin: 0 !important;
 	height: 100%;
 	font-family: Raleway-Regular, sans-serif;
+ 
 }
 
 /*---------------------------------------------*/
