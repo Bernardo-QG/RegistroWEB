@@ -36,6 +36,9 @@
 
 body, html {
   background-image: url('../images/icons/fondo.jpg')!important;
+  background-size: 100vw 100vh !important;
+  background-attachment: fixed !important;
+  margin: 0 !important;
 	height: 100%;
 	font-family: Raleway-Regular, sans-serif;
  
@@ -184,13 +187,13 @@ iframe {
   align-items: center;
   padding: 15px;
   
-  background-color: #ebebeb;
+  background-color: transparent;
 }
 
 
 .wrap-login100 {
   width: 560px;
-  background: #fff;
+  background: rgba(0,0,0,0.1);
   border-radius: 10px;
   position: relative;
 }
@@ -201,12 +204,15 @@ iframe {
 
 .login100-form {
   width: 100%;
+  
 }
 
 .login100-form-title {
   font-family: Raleway-Medium;
   font-size: 30px;
-  color: #555555;
+ /* color: #555555;*/
+  background-color: : rgba(0,0,0,0.1);
+  /*background-color:rgba(255,0,0,0.3);*/
   line-height: 1.2;
   text-transform: uppercase;
   text-align: left;
