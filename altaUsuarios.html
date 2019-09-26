@@ -91,17 +91,37 @@
 					<span class="txt1 p-b-11">
 						Privilegios
 					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="privilegios" >
-						<span class="focus-input100"></span>
+					<div class="wrap-input100 validate-input m-b-36">
+						<!--<input class="input100" type="text" name="puesto" >-->
+						<div>
+							<select name="privilegios">
+						    <option value="gerente">Dios</option>
+						    <option value="secretaria">Semi Dios</option>
+						    <option value="produccion">Mortal</option>
+						  </select>
+							<span class="focus-input100"></span>
+						</div>
 					</div>
-					
+					<!--<div class="col-md-8"></div>-->
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Registrar
 						</button>
+						
+						<div class="col-md-4">
+							<div class="col-md-4">
+								<div class="col-md-4">
+									<div class="col-md-4">
+										<div class="col-md-4">
+											<button class="login100-form-btn" type="reset" onclick="location.href='index.html'">
+											Inicio
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-
 				</form>
 			</div>
 		</div>

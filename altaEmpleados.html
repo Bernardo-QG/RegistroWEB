@@ -4,7 +4,7 @@
 
 	<title>Alta de empleados</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="Style/css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   	<script src="script.js"></script>
   	
@@ -113,17 +113,41 @@
 					<span class="txt1 p-b-11">
 						Puesto
 					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="puesto" >
-						<span class="focus-input100"></span>
-					</div>
 
+				
+					<div class="wrap-input100 validate-input m-b-36">
+						<!--<input class="input100" type="text" name="puesto" >-->
+						<div>
+							<select name="puesto">
+						    <option value="gerente">Gerente</option>
+						    <option value="secretaria">Secretaria</option>
+						    <option value="produccion">Producción</option>
+						    <option value="finanzas">Finanzas</option>
+						    <option value="logistica">Logística</option>
+						  </select>
+							<span class="focus-input100"></span>
+						</div>
+					</div>
+					<!--<div class="col-md-8"></div>-->
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Registrar
 						</button>
+						
+						<div class="col-md-4">
+							<div class="col-md-4">
+								<div class="col-md-4">
+									<div class="col-md-4">
+										<div class="col-md-4">
+											<button class="login100-form-btn" type="reset" onclick="location.href='index.html'">
+											Inicio
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-
 				</form>
 			</div>
 		</div>
