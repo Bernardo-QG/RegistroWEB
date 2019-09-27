@@ -1,15 +1,13 @@
 /* Login, Inicio */
 function login(){
-    
-   var contador=0;
-    alert("Entra");
+         
      if($("#uname").val()!="" && $("#upassword").val()!=""){     
         
         $.get("PHP/login.php?user="+$("#uname").val()+"&password="+$("#upassword").val(),function(dato){
            
            if(dato=="Si"){
              dnone();
-             alert("Bienvenido");       
+             alert("Bienvenido usuario");       
              window.open('http://localhost/RegistroWEB/altaempleados.html','_self');       
            }
            else
@@ -33,14 +31,3 @@ function login(){
    
 }
 
-/* Login, Fin */
-
-
-
-
-
-function registrar_Empleados(){   
-  //  $.get("altaEmpleados.php?NombreEmpleado="+, function(datos){   });
-  alert("Entra registrar empleado");
-
-}

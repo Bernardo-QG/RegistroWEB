@@ -1,30 +1,4 @@
-<!--<!DOCTYPE html>
-<html>
-<head>
 
-	<title>Alta Usuarios</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<link rel="stylesheet" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  	<script src="script.js"></script>
-
-</head>
-<body>
-		<form action="altaUsuarios.php" method="POST">
-			<h2>Alta de Usuarios</h2>
-			<input type="text" name="idEmpleado" id="id_empleado" placeholder="Id Empleado" required>
-			<br>
-			<input type="text" name="Username" id="nombreUsuario" placeholder="Nombre de Usuario" required>
-			<br>
-			<input type="text" name="Contrasena" id="contrasena" placeholder="Contraseña" required>
-			<br>
-			<input type="text" name="Privilegios" id="privilegios" placeholder="Privilegios" required>
-			<br>
-			<input type="submit" value="Enviar" id="boton" onclick="enviarDatosUsuario();">
-		</form>
-</body>
-</html>
--->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -53,6 +27,9 @@
 	<link rel="stylesheet" type="text/css" href="Style/css/util.css">
 	<link rel="stylesheet" type="text/css" href="Style/css/main.css">
 <!--===============================================================================================-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="JavaScript/altaUsuario.js"></script>
 </head>
 <body>
 	
@@ -61,14 +38,17 @@
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
 				<form class="login100-form validate-form flex-sb flex-w">
 					<span class="login100-form-title p-b-32">
-						Alta de Usuarios
+						Alta de Usuario
 					</span>
-
+					<div id="divError" class="alert alert-danger alert-dismissible fade show" style="display:none" >
+							<button type="button" class="close" onclick="dnone()">&times;</button>
+							<strong>No!</strong> Debes introducir datos correctos.
+					</div>
 					<span class="txt1 p-b-11">
 						Id de Empleado
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="idEmpleado" >
+						<input class="input100" type="text" name="idEmpleado" id="idEmpleado" >
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -76,7 +56,7 @@
 						Nombre de Usuario
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="nombre" >
+						<input class="input100" type="text" name="username" id="username" >
 						<span class="focus-input100"></span>
 					</div>
 
@@ -84,7 +64,7 @@
 						Contraseña
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="contrasena" >
+						<input class="input100" type="text" name="contrasena" id="contrasena" >
 						<span class="focus-input100"></span>
 					</div>
 
@@ -94,17 +74,17 @@
 					<div class="wrap-input100 validate-input m-b-36">
 						<!--<input class="input100" type="text" name="puesto" >-->
 						<div>
-							<select name="privilegios">
-						    <option value="gerente">Dios</option>
-						    <option value="secretaria">Semi Dios</option>
-						    <option value="produccion">Mortal</option>
+							<select name="privilegios" id="privilegios">
+							<option value="Mortal">Mortal</option>	
+						    <option value="Semidios">Semi Dios</option>
+						    <option value="Dios">Dios</option>
 						  </select>
 							<span class="focus-input100"></span>
 						</div>
 					</div>
 					<!--<div class="col-md-8"></div>-->
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" onclick="alta_Usuario()">
 							Registrar
 						</button>
 						
