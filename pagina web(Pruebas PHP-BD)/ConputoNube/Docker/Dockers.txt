@@ -1,0 +1,16 @@
+
+// Para el servidor de base de datos
+
+docker run -d --name hostmysql -p 33060:3306 -e MYSQL_ROOT_PASSWORD=1234 mysql
+mysql-h 192.168.99.100 -P 33060 --protocol=tcp -u root -p
+mysql>source c:/basededatos.sql
+
+// Para el servidor apache con php
+docker run -d --name hostmysql -p 80:80 -v /home/user/proyecto/:/var/www/html/ php:7.3.5-apache
+
+
+//nota: todo comando sobre la terminal de la maquina anfitriona
+
+
+// para el php de conexion con la bd
+poner servidor 192.168.99.100:33060 y la pass corespondiente
