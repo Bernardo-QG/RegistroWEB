@@ -48,11 +48,11 @@ function borrar_Empleados(id){
             
 }
 function Actualizar(id){
-  window.open('http://localhost/RegistroWEB/editarEmpleado.html?id='+id,'_self');
+  window.open('editarEmpleado.html?id='+id,'_self');
 }
 function Nuevo(){
-  window.open('http://localhost/RegistroWEB/altaEmpleados.html','_self');
+  window.open('altaEmpleados.html','_self');
 }
 function NuevoUsuario(id){
-  window.open('http://localhost/RegistroWEB/altaUsuarios.html?id='+id,'_self');
+  window.open('altaUsuarios.html?id='+id,'_self');
 }

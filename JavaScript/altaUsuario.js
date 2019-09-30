@@ -7,12 +7,12 @@ function alta_Usuario(){
             if(dato=="Si"){
               dnone();
               alert("Accion exitosa");       
-              window.open('http://localhost/RegistroWEB/tablaEmpleados.html','_self');       
+              window.open('tablaEmpleados.html','_self');       
             }
             else
             {
               $('#divError').show();
-               alert("Insersion fallida por que "+dato);              
+               alert("Accion fallida por que "+dato);              
             }
         
           });

@@ -7,7 +7,7 @@ function alta_Empleado(){
            if(dato=="Si"){
              dnone();
              alert("Accion exitosa");       
-             window.open('http://localhost/RegistroWEB/altaempleados.html','_self');       
+             window.open('altaempleados.html','_self');       
            }
            else
            {
@@ -24,7 +24,7 @@ function alta_Empleado(){
    }
   
 function Canselar(){
- // window.open('http://localhost/RegistroWEB/tablaempleados.html','_self');
+  window.open('tablaEmpleados.html','_self');
 }
  function dnone(){
           document.getElementById("divError").style.display="none";

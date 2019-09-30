@@ -46,8 +46,8 @@ function borrar_Usuarios(id){
             
 }
 function Actualizar(id){
-  window.open('http://localhost/RegistroWEB/editarUsuario.html?id='+id,'_self');
+  window.open('editarUsuario.html?id='+id,'_self');
 }
 function Nuevo(){
-  window.open('http://localhost/RegistroWEB/altaUsuarios.html','_self');
+  window.open('altaUsuarios.html','_self');
 }

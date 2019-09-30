@@ -1,5 +1,5 @@
 function Verificar(){   
-   alert("Entro");
+   //alert("Entro");
     if($("#idEmpleado").val()!=""){  
 
         $.get("PHP/punchinout.php?idEmpleado="+$("#idEmpleado").val(),function(dato){
@@ -7,13 +7,13 @@ function Verificar(){
            if(dato=="Punched out"){
              dnone();
              alert("Punched out");       
-             window.open('http://localhost/RegistroWEB/punchInOut.html','_self');       
+             window.open('punchInOut.html','_self');       
            }
            if(dato=="Punched In")
            {
             dnone();
             alert("Punched In");       
-            window.open('http://localhost/RegistroWEB/punchInOut.html','_self');  
+            window.open('punchInOut.html','_self');  
            }
            else
            {

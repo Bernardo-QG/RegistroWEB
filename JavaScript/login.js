@@ -7,7 +7,7 @@ function login(){
           if(dato=="Si"){
             dnone();
             alert("Bienvenido usuario");       
-            window.open('http://localhost/RegistroWEB/inicio.html','_self');       
+            window.open('inicio.html','_self');       
           }
           else
           {

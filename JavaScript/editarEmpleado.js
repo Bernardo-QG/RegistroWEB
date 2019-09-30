@@ -38,7 +38,7 @@ function editar_Empleado(){
            if(dato=="Si"){
              dnone();
              alert("Accion exitosa");       
-             window.open('http://localhost/RegistroWEB/tablaEmpleados.html','_self');       
+             window.open('tablaEmpleados.html','_self');       
            }
            else
            {
@@ -55,7 +55,7 @@ function editar_Empleado(){
    }
   
 function Canselar(){
- // window.open('http://localhost/RegistroWEB/tablaempleados.html','_self');
+  window.open('tablaempleados.html','_self');
 }
  function dnone(){
           document.getElementById("divError").style.display="none";
