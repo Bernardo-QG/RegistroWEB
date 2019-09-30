@@ -7,7 +7,7 @@ function alta_Usuario(){
             if(dato=="Si"){
               dnone();
               alert("Accion exitosa");       
-              window.open('http://localhost/RegistroWEB/altausuarios.html','_self');       
+              window.open('http://localhost/RegistroWEB/tablaEmpleados.html','_self');       
             }
             else
             {
@@ -25,4 +25,6 @@ function alta_Usuario(){
     function dnone(){
            document.getElementById("divError").style.display="none";
   }
+
+  
  

@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Alta de Usuarios</title>
+	<title>Usuarios</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -27,89 +26,63 @@
 	<link rel="stylesheet" type="text/css" href="Style/css/util.css">
 	<link rel="stylesheet" type="text/css" href="Style/css/main.css">
 <!--===============================================================================================-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="JavaScript/altaUsuario.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="JavaScript/Usuarios.js"></script>
+
+	
 </head>
 <body>
 	<ul>
 	  <li><a class="active" href="inicio.html">Inicio</a></li>
 	  <li><a href="index.html">Login</a></li>
-	  <li><a href="altaEmpleados.html">Empleados</a></li>
-	  <li><a href="altaUsuarios.html">Usuarios</a></li>
+	  <li><a href="tablaEmpleados.html">Empleados</a></li>
+	  <li><a href="tablaUsuarios.html">Usuarios</a></li>
 	</ul>
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-				<form class="login100-form validate-form flex-sb flex-w">
-					<span class="login100-form-title p-b-32">
-						Alta de Usuario
-					</span>
-					<div id="divError" class="alert alert-danger alert-dismissible fade show" style="display:none" >
-							<button type="button" class="close" onclick="dnone()">&times;</button>
-							<strong>No!</strong> Debes introducir datos correctos.
-					</div>
-					<span class="txt1 p-b-11">
-						Id de Empleado
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="idEmpleado" id="idEmpleado" disabled >
-						<span class="focus-input100"></span>
-					</div>
-					
-					<span class="txt1 p-b-11">
-						Nombre de Usuario
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="username" id="username" >
-						<span class="focus-input100"></span>
-					</div>
-
-					<span class="txt1 p-b-11">
-						Contraseña
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="contrasena" id="contrasena" >
-						<span class="focus-input100"></span>
-					</div>
-
-					<span class="txt1 p-b-11">
-						Privilegios
-					</span>
-					<div class="wrap-input100 validate-input m-b-36">
-						<!--<input class="input100" type="text" name="puesto" >-->
-						<div>
-							<select name="privilegios" id="privilegios">
-							<option value="Mortal">Mortal</option>	
-						    <option value="Semidios">Semi Dios</option>
-						    <option value="Dios">Dios</option>
-						  </select>
-							<span class="focus-input100"></span>
-						</div>
-					</div>
-					<!--<div class="col-md-8"></div>-->
-					
-				</form>
-				<div class="container-login100-form-btn">
-					<div class="row">
-						<div class="col-sm-5">
-								<button class="login100-form-btn" onclick="window.location.href='http://localhost/RegistroWEB/tablaEmpleados.html'" >
-										Canselar
-								</button>
-						</div>
-						<div class="col-sm-1"></div>
-						<div class="col-sm-5">
-								
-								<button class="login100-form-btn" onclick="alta_Usuario()">
-										Registrar
-								</button>
-						</div>
-					</div>
-			</div>
-			</div>
-		</div>
-	</div>
 	
+<section>
+	
+		<h4 align="center" style="color:rgb(54, 54, 54)">Usuarios</h4>
+			<div class="container-fluid mx-auto d-block" style="background: rgba(128, 128, 128, 0.384); width: 500px ">
+				<br>	
+				
+				<div class="row">
+					<div class="col-sm-9"><input type="text" name="opcion" id="txtBuscar"  placeholder="ID/Nombre de empleado/Permiso"></div>
+					<div class="col-sm-2"><button name="btn-buscar" class="mx-auto d-block"  onclick="Usuarios()"> Buscar </button></div>
+				</div>
+			<div>				
+				
+		
+			
+		
+		
+	</section>
+
+<br>
+
+	<div class="container">
+			
+			<div class="table-responsive ">
+			 <table class="table table-bordered" id="usuarios">
+						  <thead>  
+							<tr >
+							  <th>ID</th>
+							  <th style="width: 40%;">Nombre</th>
+							  <th>Usuario</th>
+							  <th>Contraseña</th>
+							  <th>Permiso</th>
+							  <th>Accion</th>
+							</tr>
+						  </thead>
+						  <tbody id="tbodyDatos">
+						  </tbody>  
+						</table>
+			</div>
+		   </div>
 
 	<div id="dropDownSelect1"></div>
 	
@@ -129,23 +102,7 @@
 	<script src="Style/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="Style/js/main.js"></script>
-<script>
-	function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-  
-    return vars;
-  }
-  function idEmpleado(){
-    var id = getUrlVars()["id"]; 
-    
-    $("#idEmpleado").val(id); 
-  }
-  idEmpleado();
-
-</script>
+	<script>Usuarios()</script>
 
 </body>
 </html>

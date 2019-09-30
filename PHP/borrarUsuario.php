@@ -11,7 +11,7 @@
 	//Obtener datos de Form HTML
 	$idUsuario=$_GET['idUsuario'];
 	//Insertar en base de datos
-	$consulta="update Usuario set Estatus=0 where Id=".$idUsuario.";";
+	$consulta="update Usuario set Estatus=0 where Id_empleado=".$idUsuario.";";
 	//Ejecutar consulta
 	if ($conexion->query($consulta) === TRUE) 
 	{

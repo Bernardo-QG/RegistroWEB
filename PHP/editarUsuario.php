@@ -1,56 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Editar empleado</title>
-</head>
-<body>
-	<?php 
+<?php 
 	//Variables de conexion
 	include 'conexionBD.php';
 	//Cadena de conexion
 	$conexion=new mysqli($hostname, $username, $password, $dbname, $port);
-	//Probar conexion
 	if ($conexion->connect_error) 
 	{
     	die("Error: " . $conexion->connect_error);
 	}
 	else
 	{
-		//Obtener ID del empleado
-		$idUsuario=$_POST['idUsuario'];
-		$consulta="select * from usuario where Id='".$idUsuario."';";
-		$resultadoSelect = $conexion->query($consulta);
-		if ($resultadoSelect->num_rows > 0) 
+		$idEmpleado=$_GET['idEmpleado'];
+		$nombreUsuario=$_GET['nombreUsuario'];
+		$passwordUsuario=$_GET['password'];
+		$permisoUsuario=$_GET['permisoUsuario'];
+		//Actualizar base de datos
+		$consulta="update Usuario set User_name='$nombreUsuario', pass='$passwordUsuario', Permiso='$permisoUsuario' where Id_empleado=$idEmpleado;";
+		//Ejecutar consulta
+		if ($conexion->query($consulta) === TRUE) 
 		{
-    		//Datos obtenidos
-    		while($row = $resultadoSelect->fetch_assoc()) 
-    		{
-        		$nombreUsuario=$row['User_name'];
-        		$passwordUsuario=$row['pass'];
-        		$permisoUsuario=$row['Permiso'];
-    		}
-			echo "<form action='guardarCambiosUsuario.php' method='POST'>
-			<label>Id de usuario:</label>
-			<input type='text' name='idUsuario' value='".$idUsuario."' readonly='readonly'>
-			<br>
-			<label>Nombre de usuario:</label>
-			<input type='text' name='nombreUsuario' value='".$nombreUsuario."'>
-			<br>
-			<label>Password:</label>
-			<input type='text' name='password' value='".$passwordUsuario."'>
-			<br>
-			<label>Permiso usuario:</label>
-			<input type='text' name='permisoUsuario' value='".$permisoUsuario."'>
-			<br>
-			<input type='submit' name='' value='Guardar Cambios'>
-			</form>";
-		} 
-		else 	
+			echo "Si";
+		}
+		else 
 		{
-    		echo "0 results";
+			echo "Error: " . $consulta . "<br>" . $conexion->error;
 		}
 	}
 	$conexion->close();
-	?>
-</body>
-</html>
+?>

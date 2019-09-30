@@ -12,13 +12,13 @@
         //Obtener datos de Form HTML
         $Buscar=$_GET['Buscar'];        
         //Insertar en base de datos
-        $consulta="select Id as Identificador, CONCAT(Nombre,' ',Apellido_paterno,' ',Apellido_materno) as Nombre, Curp, Correo, Puesto from Empleado WHERE Estatus=1 HAVING Identificador LIKE '%$Buscar%' OR Nombre LIKE '%$Buscar%' OR Puesto LIKE '%$Buscar%' ;";
+        $consulta="select Id_empleado as Identificador, CONCAT(Empleado.Nombre,' ',Empleado.Apellido_paterno,' ',Empleado.Apellido_materno) as Nombre, User_name as Usuario, pass as Contrasena, Permiso from Usuario INNER JOIN Empleado ON Usuario.Id_Empleado=Empleado.Id WHERE Usuario.Estatus=1 HAVING Identificador LIKE '%$Buscar%' OR Nombre LIKE '%$Buscar%' OR Permiso LIKE '%$Buscar%';";
 
         $select=mysqli_query($conexion, $consulta);
 
         if (mysqli_num_rows($select)>0) {
             while ($row=$select->fetch_assoc()) {
-                    $datos["AllEmpleados"][] = $row;
+                    $datos["AllUsuarios"][] = $row;
             }
         } 
         echo json_encode($datos);
