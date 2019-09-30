@@ -12,7 +12,7 @@
     $username=$_GET['user'];
     $password=$_GET['password'];
     //Insertar en base de datos
-    $consulta="SELECT * FROM Usuario WHERE User_name='$username' AND pass='$password';";
+    $consulta="SELECT * FROM Usuario WHERE Estatus=1 AND User_name='$username' AND pass='$password';";
     $resultado = $conexion->query($consulta);
 
     //Ejecutar consulta

@@ -9,25 +9,20 @@
     	die("Error: " . $conexion->connect_error);
 	}
 	//Obtener datos de Form HTML
-	$nombre=$_GET['NombreEmpleado'];
-	$apellidoPaterno=$_GET['ApellidoPaternoEmpleado'];
-	$apellidoMaterno=$_GET['ApellidoMaternoEmpleado'];
-	$curp=$_GET['CURP'];
-	$correo=$_GET['Correo'];
-	$puesto=$_GET['Puesto'];
-
+	$idUsuario=$_GET['idUsuario'];
 	//Insertar en base de datos
-	$consulta="insert into Empleado (Nombre, Apellido_paterno, Apellido_materno, Curp, Correo, Puesto, Estatus) values('".$nombre."','".$apellidoPaterno."','".$apellidoMaterno."','".$curp."','".$correo."','".$puesto."',1);";
-
+	$consulta="update Usuario set Estatus=0 where Id_empleado=".$idUsuario.";";
 	//Ejecutar consulta
 	if ($conexion->query($consulta) === TRUE) 
 	{
     	echo "Si";
-    	
+    
 	}
 	else 
 	{
     	echo "Error: " . $consulta . "<br>" . $conexion->error;
 	}
+
 	$conexion->close();
+
  ?>

@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Editar empleado</title>
+	<title>Empleados Activos</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -27,9 +26,12 @@
 	<link rel="stylesheet" type="text/css" href="Style/css/util.css">
 	<link rel="stylesheet" type="text/css" href="Style/css/main.css">
 <!--===============================================================================================-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="JavaScript/editarEmpleado.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="JavaScript/Activos.js"></script>
 
 </head>
 <body>
@@ -41,104 +43,39 @@
 				<li><a href="tablaActivos.html">Activos</a></li>
 				<li><a href="punchInOut.html">Verificacion</a></li>
 			  </ul>
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-				<form class="login100-form validate-form flex-sb flex-w">
-					<span class="login100-form-title p-b-32">
-						Editar de empleado
-					</span>
+<section>
 
-					<div id="divError" class="alert alert-danger alert-dismissible fade show" style="display:none" >
-							<button type="button" class="close" onclick="dnone()">&times;</button>
-							<strong>No!</strong> Debes introducir datos correctos.
-					</div>
-					<span class="txt1 p-b-11">
-						ID
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="ID" id="ID" disabled >
-						<span class="focus-input100"></span>
-					</div>
-					<span class="txt1 p-b-11">
-						Nombre
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="nombre" id="nombre" >
-						<span class="focus-input100"></span>
-					</div>
+		<h4 align="center" style="color:rgb(54, 54, 54)">Empleados Activos</h4>
+		<div class="container-fluid mx-auto d-block" style="background: rgba(128, 128, 128, 0.384); width: 500px ">
+			<br>	
+			
+			<input type="text" name="opcion" id="txtIdEmpleado"  placeholder="Id empleado">
+			<input type="text" name="opcion" id="txtfecha"  placeholder="Fecha (AAAA-MM-DD)">
+			<button name="btn-buscar" class="mx-auto d-block"  onclick="Activos()"> Buscar </button>			
+		<div>	
+	</section>
 					
-					<span class="txt1 p-b-11">
-						Apellido Paterno
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="apellidoPaterno" id="apellidoPaterno" >
-						<span class="focus-input100"></span>
-					</div>
 
-					<span class="txt1 p-b-11">
-						Apellido Materno
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="apellidoMaterno" id="apellidoMaterno" >
-						<span class="focus-input100"></span>
-					</div>
+	<br>
 
-					<span class="txt1 p-b-11">
-						CURP
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="curp" id="curp" >
-						<span class="focus-input100"></span>
-					</div>
-					<span class="txt1 p-b-11">
-						Correo
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-						<input class="input100" type="text" name="correo" id="correo" >
-						<span class="focus-input100"></span>
-					</div>
-					<span class="txt1 p-b-11">
-						Puesto
-					</span>
-
-				
-					<div class="wrap-input100 validate-input m-b-36">
-						<!--<input class="input100" type="text" name="puesto" >-->
-						<div>
-							<select name="puesto" id="puesto">
-							<option value="produccion">Producción</option>
-						    <option value="gerente">Gerente</option>
-						    <option value="secretaria">Secretaria</option>
-						    <option value="finanzas">Finanzas</option>
-						    <option value="logistica">Logística</option>
-						  </select>
-							<span class="focus-input100"></span>
-						</div>
-					</div>
-					<!--<div class="col-md-8"></div>-->
-					
-				</form>
-				<div class="container-login100-form-btn">
-						<div class="row">
-							<div class="col-sm-5">
-									<button class="login100-form-btn" onclick="window.location.href='http://localhost/RegistroWEB/tablaEmpleados.html'" >
-											Canselar
-									</button>
-							</div>
-							<div class="col-sm-1"></div>
-							<div class="col-sm-5">
-									
-									<button class="login100-form-btn" onclick="editar_Empleado()">
-											Registrar
-										</button>
-							</div>
-						</div>
-				</div>
+	<div class="container">
+			
+			<div class="table-responsive ">
+			 <table class="table table-bordered" id="activos">
+						  <thead>  
+							<tr>
+							  <th>Id Empleado</th>
+							  <th>Hora de Entrada</th>
+							  <th>Hora de Salida</th>
+							  <th>Activo</th>
+							  <!--<th>Accion</th>		-->					  
+							</tr>
+						  </thead>
+						  <tbody id="tbodyDatos">
+						  </tbody>  
+						</table>
 			</div>
-		</div>
-	</div>
-	<script> Empleado(); </script>
+		   </div>
 
 	<div id="dropDownSelect1"></div>
 	
@@ -158,6 +95,6 @@
 	<script src="Style/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="Style/js/main.js"></script>
-
+<script>Activos();</script>
 </body>
 </html>

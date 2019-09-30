@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Login</title>
+  <title>Inicio</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
@@ -27,11 +27,7 @@
   <link rel="stylesheet" type="text/css" href="Style/css/main.css">
 <!--===============================================================================================-->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="JavaScript/login.js"></script>
-   
-
+<script src="JavaScript/script.js"></script>
 
 </head>
 
@@ -44,42 +40,37 @@
         <li><a href="tablaActivos.html">Activos</a></li>
         <li><a href="punchInOut.html">Verificacion</a></li>
       </ul>
-  <div class="limiter">
-    <div class="container-login100">
-      <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-        <form class="login100-form validate-form flex-sb flex-w">
-          <span class="login100-form-title p-b-32">
-            Login
-          </span>
-          <div id="divError" class="alert alert-danger alert-dismissible fade show"  style="display:none" >
-            <button type="button" class="close" onclick="dnone()">&times;</button>
-            <strong>No!</strong> Debes introducir datos correctos.
+  
+  <h1 align="center">Sistema para el registro de empleados y usuarios</h1>
+   <div class="row">
+      <div class="column">
+        <div class="card">
+          <h3>Empleados</h3>
+          <a href="tablaEmpleados.html">
+          <img alt="" src="./Style/images/icons/empleados.png" />
+          </a>
         </div>
-          <span class="txt1 p-b-11">
-            Usuario
-          </span>
-          <div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-            <input class="input100" type="text" name="usuario" id="usuario"  >
-            <span class="focus-input100"></span>
-          </div>
-          
-          <span class="txt1 p-b-11">
-            Contraseña
-          </span>
-          <div class="wrap-input100 validate-input m-b-36" data-validate = "Completa este campo">
-            <input class="input100" type="password" name="contrasena" id="contrasena" >
-            <span class="focus-input100"></span>
-          </div>
-          
-        </form>
-        <div class="container-login100-form-btn">
-          <button class="login100-form-btn" onclick="login()">
-            Ingresar
-          </button>
-        </div>  
       </div>
+
+      <div class="column">
+        <div class="card">
+        <h3>Verificacion</h3>
+        <a href="punchInOut.html">
+        <img alt="" src="./Style/images/icons/login.png" />
+        </a>
+        </div>
+      </div>
+  
+      <div class="column">
+        <div class="card">
+          <h3>Usuarios</h3>
+          <a href="tablaUsuarios.html">
+          <img alt="" src="./Style/images/icons/usuarios.png" />
+          </a>
+        </div>
+      </div>
+      
     </div>
-  </div>
   
 
   <div id="dropDownSelect1"></div>
