@@ -7,12 +7,12 @@ function alta_Empleado(){
            if(dato=="Si"){
              dnone();
              alert("Accion exitosa");       
-             window.open('altaempleados.html','_self');       
+             window.open('altaEmpleados.html','_self');       
            }
            else
            {
              $('#divError').show();
-              alert("Insersion fallida por que "+dato);              
+             alert("Accion fallida "+dato);              
            }
        
          });
@@ -23,7 +23,7 @@ function alta_Empleado(){
      }
    }
   
-function Canselar(){
+function Cancelar(){
   window.open('tablaEmpleados.html','_self');
 }
  function dnone(){

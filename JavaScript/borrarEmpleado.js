@@ -6,7 +6,7 @@ function borrar_Empleado(){
             if(dato=="Si"){
               dnone();
               alert("Accion exitosa");       
-              window.open('altausuarios.html','_self');       
+              window.open('altaUsuarios.html','_self');       
             }
             else
             {

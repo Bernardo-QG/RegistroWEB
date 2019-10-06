@@ -50,8 +50,8 @@ function editar_Usuario(){
      }
    }
   
-function Canselar(){
-  window.open('tablaempleados.html','_self');
+function Cancelar(){
+  window.open('tablaUsuarios.html','_self');
 }
  function dnone(){
           document.getElementById("divError").style.display="none";

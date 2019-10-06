@@ -2,7 +2,7 @@ function Verificar(){
     //alert("Entro");
      if($("#idEmpleado").val()!=""){  
  
-         $.get("PHP/punchinout.php?idEmpleado="+$("#idEmpleado").val(),function(dato){
+         $.get("PHP/punchInOut.php?idEmpleado="+$("#idEmpleado").val(),function(dato){
             
             if(dato=="Punched out"){
               dnone();

@@ -2,7 +2,7 @@ function alta_Usuario(){
     
      if($("#idEmpleado").val()!="" && $("#username").val()!="" && $("#contrasena").val()!=""&& $("#privilegios").val()!=""){  
  
-         $.get("PHP/altausuarios.php?idEmpleado="+$("#idEmpleado").val()+"&Username="+$("#username").val()+"&Contrasena="+$("#contrasena").val()+"&Privilegios="+$("#privilegios").val(),function(dato){
+         $.get("PHP/altaUsuarios.php?idEmpleado="+$("#idEmpleado").val()+"&Username="+$("#username").val()+"&Contrasena="+$("#contrasena").val()+"&Privilegios="+$("#privilegios").val(),function(dato){
             
             if(dato=="Si"){
               dnone();
@@ -12,7 +12,7 @@ function alta_Usuario(){
             else
             {
               $('#divError').show();
-               alert("Accion fallida por que "+dato);              
+               alert("Accion fallida "+dato);              
             }
         
           });

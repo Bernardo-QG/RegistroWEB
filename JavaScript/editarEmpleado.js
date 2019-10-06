@@ -54,8 +54,8 @@ function editar_Empleado(){
      }
    }
   
-function Canselar(){
-  window.open('tablaempleados.html','_self');
+function Cancelar(){
+  window.open('tablaEmpleados.html','_self');
 }
  function dnone(){
           document.getElementById("divError").style.display="none";
