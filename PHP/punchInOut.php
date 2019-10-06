@@ -6,8 +6,9 @@
 	//Probar conexion
 	if ($conexion->connect_error) 
 	{
-    	die("Error: " . $conexion->connect_error);
+    	echo "Error: Lo siento, no se pudo conectar al base de datos.";
 	}
+	else{
 	//Obtener datos de Form HTML
 	$idEmpleado=$_GET['idEmpleado'];
 	//Comprobar si el usuario aun trabaja en la empresa
@@ -35,7 +36,7 @@
 				}
 				else 
 				{
-    				echo "Error: " . $consulta . "<br>" . $conexion->error;
+    				echo "Error: Punched out Fallido.";
 				}
 			}
 			else 
@@ -47,14 +48,15 @@
 				}
 				else 
 				{
-    				echo "Error: " . $consulta . "<br>" . $conexion->error;
+    				echo "Error: Punched In Fallido.";
 				}
 			}
         }
 	}
 	else
 	{
-		echo "Esa persona ya no es empleado de la empresa";
+		echo "Esa persona ya no es empleado de la empresa.";
 	}
+}
 	$conexion->close();
  ?>

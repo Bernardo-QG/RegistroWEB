@@ -6,8 +6,9 @@
     //Probar conexion
     if ($conexion->connect_error) 
     {
-        die("Error: " . $conexion->connect_error);
+        echo "Error: Lo siento, no se pudo conectar al base de datos.";
     }
+    else{
     //Obtener datos de Form HTML
     $username=$_GET['user'];
     $password=$_GET['password'];
@@ -20,5 +21,6 @@
             echo "Si";            
         else
             echo "No";
+    }
     $conexion->close();
 ?>

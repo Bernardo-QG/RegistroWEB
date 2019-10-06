@@ -6,12 +6,12 @@ function borrar_Usuario(){
            if(dato=="Si"){
              dnone();
              alert("Accion exitosa");       
-             window.open('http://localhost/RegistroWEB/altausuarios.html','_self');       
+             window.open('altaUsuarios.html','_self');       
            }
            else
            {
              $('#divError').show();
-              alert("Insersion fallida por que "+dato);              
+              alert("Accion fallida por que "+dato);              
            }
        
          });

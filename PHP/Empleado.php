@@ -6,7 +6,7 @@
 	//Probar conexion
 	if ($conexion->connect_error) 
 	{
-    	die("Error: " . $conexion->connect_error);
+    	echo "Error: Lo siento, no se pudo conectar al base de datos.";
     }
     else{   
         //Obtener datos de Form HTML
@@ -20,8 +20,12 @@
             while ($row=$select->fetch_assoc()) {
                     $datos["Empleado"][] = $row;
             }
+            echo json_encode($datos);
         } 
-        echo json_encode($datos);
+        else{
+            echo "No";
+        }
+        
     }
     
 	$conexion->close();

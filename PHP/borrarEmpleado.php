@@ -6,8 +6,9 @@
 	//Probar conexion
 	if ($conexion->connect_error) 
 	{
-    	die("Error: " . $conexion->connect_error);
+    	echo "Error: Lo siento, no se pudo conectar al base de datos.";
 	}
+	else{
 	//Obtener datos de Form HTML
 	$idEmpleado=$_GET['idEmpleado'];
 	//Insertar en base de datos
@@ -20,8 +21,9 @@
 	}
 	else 
 	{
-    	echo "Error: " . $consulta . "<br>" . $conexion->error;
+    	echo "No se pudo eliminar registro.";
 	}
+}
 
 	$conexion->close();
 

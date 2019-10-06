@@ -1,7 +1,7 @@
 function Activos(){
     $('#tbodyDatos').empty();
     $.get("PHP/Activos.php?fecha="+$("#txtfecha").val()+"&idEmpleado="+$("#txtIdEmpleado").val(),function(data){
-       //alert("Get");
+       if(data!="No"){
         gct=JSON.parse(data);
         //alert(gct);
         for(var i=0; i<gct["AllActivos"].length; i++){
@@ -16,7 +16,8 @@ function Activos(){
             //+'</td>'
             +'</tr>');               
             
-        };
+        }
+    }
     
       });
       

@@ -34,7 +34,7 @@ function editar_Usuario(){
            if(dato=="Si"){
              dnone();
              alert("Accion exitosa");       
-             window.open('http://localhost/RegistroWEB/tablaUsuarios.html','_self');       
+             window.open('tablaUsuarios.html','_self');       
            }
            else
            {
@@ -50,8 +50,8 @@ function editar_Usuario(){
      }
    }
   
-function Canselar(){
- // window.open('http://localhost/RegistroWEB/tablaempleados.html','_self');
+function Cancelar(){
+  window.open('tablaUsuarios.html','_self');
 }
  function dnone(){
           document.getElementById("divError").style.display="none";

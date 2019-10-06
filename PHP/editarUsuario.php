@@ -5,7 +5,7 @@
 	$conexion=new mysqli($hostname, $username, $password, $dbname, $port);
 	if ($conexion->connect_error) 
 	{
-    	die("Error: " . $conexion->connect_error);
+    	echo "Error: Lo siento, no se pudo conectar al base de datos.";
 	}
 	else
 	{
@@ -22,7 +22,7 @@
 		}
 		else 
 		{
-			echo "Error: " . $consulta . "<br>" . $conexion->error;
+			echo "No se pudo actualizar registro.";
 		}
 	}
 	$conexion->close();

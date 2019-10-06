@@ -1,7 +1,7 @@
 function Usuarios(){
     $('#tbodyDatos').empty();
     $.get("PHP/Usuarios.php?Buscar="+$("#txtBuscar").val(),function(data){
-       //alert("Get");
+      if(data!="No"){
         gct=JSON.parse(data);
         //alert(gct);
         for(var i=0; i<gct["AllUsuarios"].length; i++){
@@ -9,8 +9,7 @@ function Usuarios(){
             $('#usuarios > tbody:last-child').append(' '
             +'<tr><td >'+gct["AllUsuarios"][i].Identificador+'</td>'
             +'<td >'+gct["AllUsuarios"][i].Nombre+'</td>'
-            +'<td >'+gct["AllUsuarios"][i].Usuario+'</td>'
-            +'<td >'+gct["AllUsuarios"][i].Contrasena+'</td>'
+            +'<td >'+gct["AllUsuarios"][i].Usuario+'</td>'           
             +'<td >'+gct["AllUsuarios"][i].Permiso+'</td>'
             +'<td style="width:180">'
             +'<button onclick="Actualizar('+gct["AllUsuarios"][i].Identificador+')" type="button" class="btn btn-info"><i class="fas fa-edit"></i></button>'
@@ -19,7 +18,8 @@ function Usuarios(){
             +'</td></tr>');
                 
             
-        };
+        }
+        }
     
       });
       
@@ -46,8 +46,8 @@ function borrar_Usuarios(id){
             
 }
 function Actualizar(id){
-  window.open('http://localhost/RegistroWEB/editarUsuario.html?id='+id,'_self');
+  window.open('editarUsuario.html?id='+id,'_self');
 }
 function Nuevo(){
-  window.open('http://localhost/RegistroWEB/altaUsuarios.html','_self');
+  window.open('altaUsuarios.html','_self');
 }

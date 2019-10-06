@@ -6,8 +6,9 @@
 	//Probar conexion
 	if ($conexion->connect_error) 
 	{
-    	die("Error: " . $conexion->connect_error);
+    	echo "Error: Lo siento, no se pudo conectar al base de datos.";
 	}
+	else{
 	//Obtener datos de Form HTML
 	$nombre=$_GET['NombreEmpleado'];
 	$apellidoPaterno=$_GET['ApellidoPaternoEmpleado'];
@@ -27,7 +28,8 @@
 	}
 	else 
 	{
-    	echo "Error: " . $consulta . "<br>" . $conexion->error;
+    	echo "Error: No se pudo agregar registro.";
 	}
+}
 	$conexion->close();
  ?>
