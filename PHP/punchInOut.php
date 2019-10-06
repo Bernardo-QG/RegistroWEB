@@ -36,7 +36,7 @@
 				}
 				else 
 				{
-    				echo "Error: Punched out Fallido.";
+    				echo "Error: Punch out Fallido.";
 				}
 			}
 			else 
@@ -48,7 +48,7 @@
 				}
 				else 
 				{
-    				echo "Error: Punched In Fallido.";
+    				echo "Error: Punch In Fallido.";
 				}
 			}
         }
