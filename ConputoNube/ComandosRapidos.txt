@@ -1,0 +1,28 @@
+mysql -h 54.198.65.248 -P 33060 --protocol=tcp -u root -p
+mysql -h 3.81.59.170 -P 33060 --protocol=tcp -u root -p
+
+mysql -h 34.229.234.150 -P 33060 --protocol=tcp -u root -p
+
+
+ssh -i BQG.pem ec2-user@54.198.65.248
+ssh -i CAA.pem ec2-user@3.81.59.170
+ssh -i CEL.pem ec2-user@34.229.234.150
+
+SET SQL_MODE='ALLOW_INVALID_DATES';
+
+git checkout master;
+git pull;
+
+
+docker exec -ti hostapache sh
+>> docker-php-ext-install mysqli 
+>> docker-php-ext-enable mysqli
+>> apachectl restart
+
+<?php
+$host = "172.17.0.2"; o $host = "192.168.99.100";
+$usuario = "root";
+$clave = "1234";
+$port=3306
+$bd = "store";
+
