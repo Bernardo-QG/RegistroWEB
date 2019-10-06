@@ -1,11 +1,9 @@
 function Empleados(){
     $('#tbodyDatos').empty();
     $.get("PHP/Empleados.php?Buscar="+$("#txtBuscar").val(),function(data){
-       //alert("Get");
-        gct=JSON.parse(data);
-        //alert(gct);
+        if(data!="No"){
+        gct=JSON.parse(data);     
         for(var i=0; i<gct["AllEmpleados"].length; i++){
-            //alert("Dato");
             $('#empleados > tbody:last-child').append(' '
             +'<tr><td >'+gct["AllEmpleados"][i].Identificador+'</td>'
             +'<td >'+gct["AllEmpleados"][i].Nombre+'</td>'
@@ -18,11 +16,11 @@ function Empleados(){
             +'<button onclick="NuevoUsuario('+gct["AllEmpleados"][i].Identificador+')" type="button"  class="btn btn-info"><i class="fas fa-user"></i></button>'
             +'&nbsp;'
             +'<button onclick="borrar_Empleados('+gct["AllEmpleados"][i].Identificador+')" type="button" class="btn btn-info"><i class="fas fa-trash-alt""></i></button>'            
-            +'</td></tr>');
-                
+            +'</td></tr>');               
            
-        };
+        }
     
+      }
       });
       
 }

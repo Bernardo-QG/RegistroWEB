@@ -1,7 +1,7 @@
 function Usuarios(){
     $('#tbodyDatos').empty();
     $.get("PHP/Usuarios.php?Buscar="+$("#txtBuscar").val(),function(data){
-       //alert("Get");
+      if(data!="No"){
         gct=JSON.parse(data);
         //alert(gct);
         for(var i=0; i<gct["AllUsuarios"].length; i++){
@@ -18,7 +18,8 @@ function Usuarios(){
             +'</td></tr>');
                 
             
-        };
+        }
+        }
     
       });
       
