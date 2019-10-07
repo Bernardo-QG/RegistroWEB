@@ -13,12 +13,16 @@
     $username=$_GET['user'];
     $password=$_GET['password'];
     //Insertar en base de datos
-    $consulta="SELECT * FROM Usuario WHERE Estatus=1 AND User_name='$username' AND pass='$password';";
+    $consulta="SELECT Permiso FROM Usuario WHERE Estatus=1 AND User_name='$username' AND pass='$password';";
     $resultado = $conexion->query($consulta);
 
     //Ejecutar consulta
         if($resultado->num_rows>0)
-            echo "Si";            
+        {  
+            while($row = $resultado->fetch_assoc()) {
+                echo $row["Permiso"];
+            }
+        }       
         else
             echo "No";
     }
