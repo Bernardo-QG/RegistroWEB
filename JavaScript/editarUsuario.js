@@ -56,3 +56,11 @@ function Cancelar(){
  function dnone(){
           document.getElementById("divError").style.display="none";
  }
+
+ function ini(){    
+  $.get("PHP/Sesion.php?funcion=getlog&permiso=",function(result){ 
+      if(result!="Dios"){          
+          window.open('tablaUsuarios.html','_self'); 
+      }
+  });    
+}

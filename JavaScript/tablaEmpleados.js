@@ -29,22 +29,40 @@ function Empleados(){
 
 function borrar_Empleados(id){
 
-    $.get("PHP/borrarEmpleado.php?idEmpleado="+id,function(dato){
-           
-        if(dato=="Si"){
-       
-          alert("Accion exitosa");       
-          Empleados();   
-        }
-        else
-        {
-        
-           alert("Accion fallida por que "+dato);              
-        }
-    
-      });
-            
+  $.get("PHP/Sesion.php?funcion=getlog&permiso=",function(result){ 
+    if(result!="Dios" ){          
+        alert("Lo siento, no tiene permitido borrar.");
+    }
+    else
+    {
+      borrar(id);
+
+    }
+});    
+                 
 }
+
+function borrar(id){
+
+  $.get("PHP/borrarEmpleado.php?idEmpleado="+id,function(dato){
+         if(dato=="Si"){
+     
+        alert("Accion exitosa");       
+        Empleados();   
+      }
+      else
+      {
+      
+         alert("Accion fallida por que "+dato);              
+      }
+  
+    });
+               
+}
+
+
+
+
 function Actualizar(id){
   window.open('editarEmpleado.html?id='+id,'_self');
 }
@@ -53,4 +71,13 @@ function Nuevo(){
 }
 function NuevoUsuario(id){
   window.open('altaUsuarios.html?id='+id,'_self');
+}
+
+function ini(){    
+ 
+  $.get("PHP/Sesion.php?funcion=getlog&permiso=",function(result){ 
+      if(result=="Mortal" || result=="0" ){          
+          window.open('inicio.html','_self'); 
+      }
+  });    
 }

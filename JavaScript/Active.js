@@ -22,3 +22,10 @@ function Activos(){
       });
       
 }
+function ini(){    
+  $.get("PHP/Sesion.php?funcion=getlog&permiso=",function(result){ 
+      if(result=="Mortal" || result=="0" ){          
+          window.open('inicio.html','_self'); 
+      }
+  });    
+}
