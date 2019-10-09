@@ -2,6 +2,10 @@
 // Para el servidor de base de datos
 
 docker run -d --name hostmysql -p 33060:3306 -e MYSQL_ROOT_PASSWORD=1234 mysql
+
+
+docker run -d --name hostBD -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1234 mysql
+
 docker run -d --name hostmysql -p 33060:3306 -v /home/ec2-user/RegistroWEB/:/home/ -e MYSQL_ROOT_PASSWORD=1234 mysql
 docker run -d --name hostmysql -p 33060:3306 -v /home/ec2-user/ElectronikusWEB/DataBase/:/home/ -e MYSQL_ROOT_PASSWORD=1234 mysql
 

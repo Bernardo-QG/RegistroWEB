@@ -19,10 +19,6 @@ docker exec -ti hostapache sh
 >> docker-php-ext-enable mysqli
 >> apachectl restart
 
-<?php
-$host = "172.17.0.2"; o $host = "192.168.99.100";
-$usuario = "root";
-$clave = "1234";
-$port=3306
-$bd = "store";
+ALTER USER root@'%' IDENTIFIED WITH mysql_native_password BY '1234';
+
 
